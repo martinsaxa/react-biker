@@ -1,15 +1,15 @@
 import { View } from "react-native"
 import { Button, Text } from "react-native-paper"
 import { HomeProps } from "."
-import { useNetworks } from "../hooks/api"
+import NetworksList from "../components/NetworksList"
 
 export default function HomeScreen({ navigation }: HomeProps) {
-    const { data } = useNetworks()
+
+    const navigateToDetailsScreen = (id: string) => navigation.navigate('LocationDetails', {id})
 
     return (
         <View style={{ flex: 1 }}>
-            <Button onPress={() => navigation.navigate('LocationDetails')} mode="contained">Click</Button>
-            {data && (<Text>{JSON.stringify(data)}</Text>)}
+            <NetworksList onItemPress={navigateToDetailsScreen} />
         </View>
     )
 }
