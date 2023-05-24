@@ -1,8 +1,8 @@
 import { View } from "react-native";
 import { Text } from "react-native-paper";
-import { LocationDetailsProps } from ".";
+import { NetworkProps } from ".";
 
-export default function LocationDetailsScreen({ route }: LocationDetailsProps) {
+export default function NetworkScreen({ route }: NetworkProps) {
     return (
         <View style={{ flex: 1 }}>
             <Text>{route.params.id}</Text>

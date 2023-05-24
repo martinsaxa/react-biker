@@ -2,11 +2,11 @@ import { createNativeStackNavigator, NativeStackScreenProps } from "@react-navig
 
 type RootStackParamList = {
     Home: undefined
-    LocationDetails: {
+    Network: {
         id: string
     }
 }
 
 export type HomeProps = NativeStackScreenProps<RootStackParamList, 'Home'>
-export type LocationDetailsProps = NativeStackScreenProps<RootStackParamList, 'LocationDetails'>
+export type NetworkProps = NativeStackScreenProps<RootStackParamList, 'Network'>
 export const Stack = createNativeStackNavigator<RootStackParamList>()

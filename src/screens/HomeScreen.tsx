@@ -5,7 +5,7 @@ import NetworksList from "../components/NetworksList"
 
 export default function HomeScreen({ navigation }: HomeProps) {
 
-    const navigateToDetailsScreen = (id: string) => navigation.navigate('LocationDetails', {id})
+    const navigateToDetailsScreen = (id: string) => navigation.navigate('Network', {id})
 
     return (
         <View style={{ flex: 1 }}>
