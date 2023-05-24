@@ -1,5 +1,6 @@
 import useSWR from 'swr'
+import { NetworksRequest } from '../types/api'
 
 export const useNetworks = () => {
-    return useSWR('/v2/networks')
+    return useSWR<NetworksRequest>('/v2/networks')
 }
