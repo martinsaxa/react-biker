@@ -1,7 +1,7 @@
 import { FlashList } from "@shopify/flash-list";
 import { ActivityIndicator, Divider, List } from "react-native-paper";
 import { useNetworks } from "../hooks/api";
-import { NetworksRequest } from "../types/api";
+import { NetworksRequest } from "../types/api/networks";
 
 interface Props {
     onItemPress: (id: string) => void
