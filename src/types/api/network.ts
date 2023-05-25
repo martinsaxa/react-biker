@@ -12,6 +12,7 @@ export interface Network {
     location:  Location;
     name:      string;
     stations:  Station[];
+    source?: string
 }
 
 export interface License {
