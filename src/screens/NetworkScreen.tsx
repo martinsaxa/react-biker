@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     info: {
-        flex: 2,
+        flex: 1,
         rowGap: 10,
         margin: 10,
     },

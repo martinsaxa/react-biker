@@ -10,7 +10,7 @@ interface Props {
 export default function InfoSurface({ heading, value, onPress }: Props) {
     return (
         <TouchableWithoutFeedback onPress={onPress} style={styles.main}>
-        <Surface style={styles.surface}>
+            <Surface style={styles.surface}>
                 <Text style={styles.heading}>{heading}</Text>
                 <Text>{value}</Text>
             </Surface>
@@ -27,8 +27,9 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         rowGap: 10,
+        fontSize: 18,
     },
     heading: {
-        fontWeight: '600',
+        fontWeight: 'bold',
     }
 })
