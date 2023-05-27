@@ -1,7 +1,7 @@
 import { FlashList } from "@shopify/flash-list";
-import { ActivityIndicator, Divider, List } from "react-native-paper";
+import { ActivityIndicator, Divider, List, Text } from "react-native-paper";
 import { useNetworks } from "../hooks/api";
-import { NetworksRequest } from "../types/api/networks";
+import { sortNetworks } from "../lib/networks";
 
 interface Props {
     onItemPress: (id: string) => void
@@ -11,8 +11,9 @@ export default function NetworksList({ onItemPress }: Props) {
     const { data, isLoading } = useNetworks()
     
     if (isLoading) return <ActivityIndicator />
+    if (!data) return <Text>No data</Text>
 
-    const { networks } = data as NetworksRequest
+    const networks = data.networks.sort(sortNetworks)
 
     return (
         <FlashList
