@@ -1,11 +1,11 @@
 import { Linking, StyleSheet, View } from "react-native";
-import { ActivityIndicator, Headline, Surface, Text } from "react-native-paper";
+import { ActivityIndicator, Headline, Modal, Surface, Text } from "react-native-paper";
 import { NetworkProps } from ".";
 import { useNetwork } from "../hooks/api";
-import MapView, { Marker } from "react-native-maps";
+import MapView, { Callout, Marker } from "react-native-maps";
 import InfoSurface from "../components/InfoSurface";
 
-export default function NetworkScreen({ route }: NetworkProps) {
+export default function NetworkScreen({ route, navigation }: NetworkProps) {
     const { data } = useNetwork(route.params.id)
 
     if (!data) return <ActivityIndicator />
@@ -27,7 +27,11 @@ export default function NetworkScreen({ route }: NetworkProps) {
                             latitude: station.latitude,
                             longitude: station.longitude
                         }}
-                    />
+                    >
+                        <Callout onPress={() => navigation.navigate('Station', { station })}>
+                            <Text>{station.name}</Text>
+                        </Callout>
+                    </Marker>
                 ))}
             </MapView>
             <View style={styles.info}>

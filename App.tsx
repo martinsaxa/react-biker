@@ -6,6 +6,7 @@ import { SWRoptions } from './src/lib/api';
 import { Stack } from './src/screens';
 import HomeScreen from './src/screens/HomeScreen';
 import NetworkScreen from './src/screens/NetworkScreen';
+import StationScreen from './src/screens/StationScreen';
 
 export default function App() {
 
@@ -16,6 +17,10 @@ export default function App() {
           <Stack.Navigator>
             <Stack.Screen name='Home' component={HomeScreen} />
             <Stack.Screen name='Network' component={NetworkScreen} />
+            <Stack.Screen name='Station' component={StationScreen} options={({ route }) => ({
+              presentation: 'modal',
+              title: route.params.station.name,
+            })} />
           </Stack.Navigator>
         </PaperProvider>
       </NavigationContainer>
