@@ -4,11 +4,18 @@ import { NetworkProps } from ".";
 import { useNetwork } from "../hooks/api";
 import MapView, { Callout, Marker } from "react-native-maps";
 import InfoSurface from "../components/InfoSurface";
+import { global } from "../lib/styles";
 
 export default function NetworkScreen({ route, navigation }: NetworkProps) {
     const { data } = useNetwork(route.params.id)
 
-    if (!data) return <ActivityIndicator />
+    if (!data) {
+        return (
+            <View style={global.center}>
+                <ActivityIndicator size="large" />
+            </View>
+        )
+    }
 
     const { network } = data
 
