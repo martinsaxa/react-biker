@@ -9,6 +9,7 @@ type RootStackParamList = {
     Station: {
         station: Station
     },
+    About: undefined,
 }
 
 export type HomeProps = NativeStackScreenProps<RootStackParamList, 'Home'>

@@ -5,5 +5,8 @@ export const global = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
+    },
+    link: {
+        textDecorationLine: 'underline',
     }
 })
