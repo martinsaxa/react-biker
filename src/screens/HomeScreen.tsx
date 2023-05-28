@@ -1,14 +1,12 @@
-import { View } from "react-native"
+import { StyleSheet, View } from "react-native"
 import { ActivityIndicator, Searchbar, Text } from "react-native-paper"
 import { HomeProps } from "."
 import NetworksList from "../components/NetworksList"
 import { useNetworks } from "../hooks/api"
 import { global } from "../lib/styles"
-import { useState } from "react"
 
 export default function HomeScreen({ navigation }: HomeProps) {
-    const { data, isLoading } = useNetworks()
-    const [searchQuery, setSearchQuery] = useState('')
+    const { data, isLoading, searchQuery, setSearchQuery } = useNetworks()
 
     const navigateToDetailsScreen = (id: string) => navigation.navigate('Network', {id})
 
@@ -31,8 +29,15 @@ export default function HomeScreen({ navigation }: HomeProps) {
 
     return (
         <View style={{ flex: 1 }}>
-            <Searchbar value={searchQuery} onChangeText={(query) => setSearchQuery(query)} />
+            <Searchbar value={searchQuery} onChangeText={(query) => setSearchQuery(query)} style={styles.searchBar} />
             <NetworksList networks={networks} onItemPress={navigateToDetailsScreen} />
         </View>
     )
 }
+
+const styles = StyleSheet.create({
+    searchBar: {
+        marginHorizontal: 4,
+        marginTop: 2,
+    }
+})
