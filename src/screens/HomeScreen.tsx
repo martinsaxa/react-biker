@@ -2,7 +2,6 @@ import { View } from "react-native"
 import { ActivityIndicator, Text } from "react-native-paper"
 import { HomeProps } from "."
 import NetworksList from "../components/NetworksList"
-import { sortNetworks } from "../lib/networks"
 import { useNetworks } from "../hooks/api"
 import { global } from "../lib/styles"
 
@@ -26,7 +25,7 @@ export default function HomeScreen({ navigation }: HomeProps) {
         )
     }
 
-    const networks = data.networks.sort(sortNetworks)
+    const { networks } = data
 
     return (
         <View style={{ flex: 1 }}>
