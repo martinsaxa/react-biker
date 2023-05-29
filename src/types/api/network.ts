@@ -39,14 +39,14 @@ export interface Station {
 }
 
 export interface Extra {
-    banking:            boolean;
-    ebikes:             number;
-    last_updated:       number;
-    "payment-terminal": boolean;
-    renting:            number;
-    returning:          number;
-    slots:              number;
-    station_id:         number;
-    uid:                string;
-    payment:            string;
+    banking?:            boolean;
+    ebikes?:             number;
+    last_updated?:       number;
+    "payment-terminal"?: boolean;
+    renting?:            number;
+    returning?:          number;
+    slots?:              number;
+    station_id?:         number;
+    uid?:                string;
+    payment?:            string
 }
