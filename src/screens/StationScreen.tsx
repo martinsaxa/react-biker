@@ -15,8 +15,8 @@ export default function StationScreen({ route }: StationProps) {
         <View style={{ flex: 1 }}>
             <MapView style={styles.map} initialRegion={{
                 latitude, longitude,
-                latitudeDelta: 0.5,
-                longitudeDelta: 0.5,
+                latitudeDelta: 0.04,
+                longitudeDelta: 0.05,
             }}>
                 <Marker coordinate={{
                     latitude, longitude

@@ -24,8 +24,8 @@ export default function NetworkScreen({ route, navigation }: NetworkProps) {
             <MapView style={styles.map} initialRegion={{
                 latitude: network.location.latitude,
                 longitude: network.location.longitude,
-                latitudeDelta: 0.0922,
-                longitudeDelta: 0.0421,
+                latitudeDelta: 0.04,
+                longitudeDelta: 0.05,
             }}>
                 {network.stations.map((station, index) => (
                     <Marker 
