@@ -6,16 +6,16 @@ A simple app to list and view city sharing networks over the world. Build using 
 
 ### Ios
 
-![/art/ios_list.png]
-
-![/art/ios_network.png]
-
-![/art/ios_station.png]
+<p align="center">
+  <img src="/art/ios_list.png" height="600">
+  <img src="/art/ios_network.png" height="600">
+  <img src="/art/ios_station.png" height="600">
+</p>
 
 ### Android
 
-![/art/android_list.png]
-
-![/art/android_network.png]
-
-![/art/android_station.png]
+<p align="center">
+  <img src="/art/android_list.png" height="600">
+  <img src="/art/android_network.png" height="600">
+  <img src="/art/android_station.png" height="600">
+</p>
