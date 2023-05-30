@@ -1,15 +1,18 @@
-import { createNativeStackNavigator, NativeStackScreenProps } from "@react-navigation/native-stack";
-import { Station } from "../types/api/network";
+import {
+  createNativeStackNavigator,
+  NativeStackScreenProps,
+} from '@react-navigation/native-stack'
+import { Station } from '../types/api/network'
 
 type RootStackParamList = {
-    Home: undefined
-    Network: {
-        id: string
-    },
-    Station: {
-        station: Station
-    },
-    About: undefined,
+  Home: undefined
+  Network: {
+    id: string
+  }
+  Station: {
+    station: Station
+  }
+  About: undefined
 }
 
 export type HomeProps = NativeStackScreenProps<RootStackParamList, 'Home'>
